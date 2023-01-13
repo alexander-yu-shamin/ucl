@@ -1,18 +1,49 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+using UnityEditor;
 
-public class CommandPaletteController : MonoBehaviour
+namespace UCL.Assets.Editor.CommandPalette
 {
-    // Start is called before the first frame update
-    void Start()
+    public static class CommandPaletteController
     {
-        
-    }
+        private static CommandPaletteView View = null;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+        [MenuItem("Window/Command Palette %`")]
+        private static void ToggleCommandPalette()
+        {
+            if (View == null)
+            {
+                ShowView();
+            }
+            else
+            {
+                CloseView();
+            }
+        }
+
+        private static void ShowView()
+        {
+            if (View != null)
+            {
+                return;
+            }
+
+            View = ScriptableObject.CreateInstance<CommandPaletteView>();
+            View.OnCloseWindow += CloseView;
+            View.Show();
+        }
+
+        private static void CloseView()
+        {
+            if (View == null)
+            {
+                return;
+            }
+
+            View.OnCloseWindow -= CloseView;
+            View.Close();
+            View = null;
+        }
     }
 }

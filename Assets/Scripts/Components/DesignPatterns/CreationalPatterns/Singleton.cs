@@ -23,8 +23,13 @@ namespace UCL.Assets.Scripts.Components.DesignPatterns.CreationalPatterns
         public static T Instance => _instance;
         public static bool IsAlive => true;
 
+        protected virtual void Initialize()
+        {
+        }
+
         protected Singleton()
         {
+            Initialize();
         }
     }
 
@@ -62,6 +67,7 @@ namespace UCL.Assets.Scripts.Components.DesignPatterns.CreationalPatterns
                     if (instances.Length == 1)
                     {
                         _instance = instances[0];
+                        _instance.Initialize();
                         CheckDontDestroyOnLoad(_instance);
                         IsAlive = true;
                         return _instance;
@@ -79,12 +85,16 @@ namespace UCL.Assets.Scripts.Components.DesignPatterns.CreationalPatterns
 
                 var instanceGameObject = new GameObject(typeof(T).Name, typeof(T));
                 _instance = instanceGameObject.GetComponent<T>();
+                _instance.Initialize();
                 CheckDontDestroyOnLoad(_instance);
                 IsAlive = true;
                 return _instance;
             }
         }
 
+        protected virtual void Initialize()
+        {
+        }
 
         public virtual void Awake()
         {

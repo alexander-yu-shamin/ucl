@@ -3,7 +3,10 @@ guid: 151b6b1c2c82cd845b0bb399f999a580
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - m_ViewDataDictionary: {instanceID: 0}
+  - _skin: {fileID: 11400000, guid: b66cc3be9b6f73442952cb8581103c19, type: 2}
+  - _iconTexture: {fileID: 2800000, guid: 84ecf5be5a0a662468318c3e3699a6a6, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

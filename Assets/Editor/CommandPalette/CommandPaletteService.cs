@@ -1,18 +1,21 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using UCL.Assets.Editor.CommandPalette.Indexers;
+using UCL.Assets.Scripts.Components.DesignPatterns.CreationalPatterns;
+using UnityEditor;
 
-public class CommandPaletteService : MonoBehaviour
+namespace UCL.Assets.Editor.CommandPalette
 {
-    // Start is called before the first frame update
-    void Start()
+    [InitializeOnLoad]
+    public class CommandPaletteService : Singleton<CommandPaletteService>
     {
-        
+        private readonly List<SearchIndexerBase> _indexers = new List<SearchIndexerBase>();
+
+        protected override void Initialize()
+        {
+            base.Initialize();
+            _indexers.Clear();
+            //_indexers.Add();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
