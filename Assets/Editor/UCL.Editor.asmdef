@@ -1,0 +1,18 @@
+{
+    "name": "UCL.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:18c8648373fbfbe4ba7af877e2dd52f0"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
