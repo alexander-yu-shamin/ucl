@@ -14,7 +14,7 @@
 
 <div align="center">
 
-# **U**nity **C**ommon **L**ibrary
+# ***U***nity ***C***ommon ***L***ibrary
 
 ![](/Docs/logo.png)
 </div>
